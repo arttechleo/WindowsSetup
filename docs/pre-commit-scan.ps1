@@ -57,6 +57,7 @@ foreach ($f in $Files) {
             if ($inDocs) { continue }  # docs/ may document forbidden patterns
             if ($p -eq '@' -and (($f -match '\.example\.' -or $f -match '\.md$') -and $content -match 'your@email|user@host|example@')) { continue }
             if ($p -eq '@' -and $f -match '\.xml$' -and $content -match 'xmlns') { continue }
+            if ($p -eq 'token' -and $f -match '\.xml$' -and $content -match 'InteractiveToken') { continue }
             if (($f -replace '\\', '/' -match 'README\.md$') -or ($f -match '\.gitignore$')) { if ($docPatterns -contains $p) { continue } }
             $violations += "$f : forbidden pattern '$p'"
         }
