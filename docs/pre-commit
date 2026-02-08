@@ -1,0 +1,5 @@
+#!/bin/sh
+# Pre-commit hook: run forbidden-pattern scan. Install with: .\docs\install-pre-commit.ps1
+ROOT="$(git rev-parse --show-toplevel)"
+cd "$ROOT" && powershell.exe -NoProfile -ExecutionPolicy Bypass -File "docs/pre-commit-scan.ps1"
+exit $?

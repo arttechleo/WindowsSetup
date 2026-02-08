@@ -1,0 +1,15 @@
+# Scheduled task export — example commands
+# Export from a reference machine, then SANITIZE the XML before placing in config\tasks\.
+# Replace C:\Users\YourName\... with %USERPROFILE% or a documented variable (e.g. TA_ROOT).
+# Do not commit XML that contains your username or real paths.
+
+# Export a single task by name:
+schtasks /Query /TN "TaskName" /FO LIST /V
+
+# To export as XML (PowerShell):
+# $task = Get-ScheduledTask -TaskName "TaskName"
+# $task | Export-ScheduledTask -OutFile "config\tasks\TaskName.template.xml"
+# Then open the file and replace user-specific paths with placeholders.
+
+# After sanitization, place the .template.xml in config\tasks\ and run:
+# .\scripts\03_tasks_import.ps1

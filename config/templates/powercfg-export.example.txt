@@ -1,0 +1,11 @@
+# Power plan export — example commands (do not commit the actual .pow file)
+# Run from repo root. Export goes to local\ (gitignored).
+
+# 1. Get the active power scheme GUID:
+powercfg -getactivescheme
+
+# 2. Export that scheme (replace <GUID> with the UUID from step 1, e.g. 381b4222-f694-41f0-9685-ff5bb260df2e):
+powercfg -export local\powerplan.pow <GUID>
+
+# 3. On a new machine: copy local\powerplan.pow into this repo's local\ and run:
+# .\scripts\04_powerplan.ps1

@@ -1,0 +1,10 @@
+# Winget export — example command (do not commit the actual export file)
+# Run from repo root. Export goes to local\ (gitignored).
+
+winget export -o local\winget-apps.json
+
+# Optional: include source and version
+# winget export -o local\winget-apps.json --include-versions
+
+# Then on a new machine: copy local\winget-apps.json into this repo's local\ and run:
+# .\scripts\01_winget_import.ps1

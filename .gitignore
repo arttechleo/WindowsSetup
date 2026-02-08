@@ -1,0 +1,37 @@
+# Local / machine-specific (never commit)
+local/
+
+# Logs
+*.log
+
+# Registry dumps (may contain user paths / machine IDs)
+*.reg
+
+# Power plan exports (may contain machine-specific GUIDs; keep sanitized templates only)
+*.pow
+
+# XML exports that may contain user paths (e.g. scheduled tasks)
+# Sanitized templates go in config/tasks/ or config/templates/
+*-export*.xml
+
+# Secrets and env
+.env
+.env.*
+*.env
+*token*
+*key*
+*secret*
+*.pem
+id_rsa
+id_rsa.pub
+
+# OS / editor
+Thumbs.db
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Optional: uncomment if you keep binary blobs out of repo
+# *.exe
+# *.dll
